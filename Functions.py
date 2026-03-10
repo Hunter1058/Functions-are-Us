@@ -46,3 +46,19 @@ def play_game(home_team, away_team):
     else:
         print(f"  Result: {away_team} wins. Better luck next time.\n")
         return 'L'
+    
+#Display game funciton
+#Prints the final season record
+#Using wins and losses to find how the team did 
+#this season and print the correlating message.
+def final_season_record(wins, losses):
+    print(f"\nFinal season record: {wins} - {losses}")
+
+    if wins / (wins + losses) >= 0.75:
+        print("Congratulations! You qualified for the NCAA Soccer Tournament!")
+
+    elif wins / (wins + losses) >= 0.50:
+        print("You had a good season.")
+
+    else:
+        print("Your team needs to practice!")

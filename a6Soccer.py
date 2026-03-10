@@ -5,7 +5,7 @@
 # It will then ask about the teams they play against and randomly generate scores for games they play.
 # It will then display information about the home team’s wins, losses, and overall performance
 
-from Functions import play_game, displayMenu, chooseTeam
+from Functions import play_game, displayMenu, chooseTeam, final_season_record
 import random
 
 # Prompt the user
@@ -41,13 +41,4 @@ print("\nTeams lost against:")
 for team in results["Lost Against"]:
     print(f" {team}")
 
-print(f"\nFinal season record: {wins} - {losses}")
-
-if wins / (wins + losses) >= 0.75:
-    print("Congratulations! You qualified for the NCAA Soccer Tournament!")
-
-elif wins / (wins + losses) >= 0.50:
-    print("You had a good season.")
-
-else:
-    print("Your team needs to practice!")
+final_season_record(wins, losses)
