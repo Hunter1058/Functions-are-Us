@@ -1,3 +1,4 @@
+from Functions import play_game, displayMenu, chooseTeam
 import random
 
 # Prompt the user
@@ -16,21 +17,14 @@ results = {
 for number in range(1, numGames + 1):
     awayTeam = input(f"Enter the name of the away team for game {number}: ")
 
-    homeScore = random.randint(0, 3)
-    awayScore = random.randint(0, 3)
+    result = play_game(homeTeam, awayTeam)  # <-- replaces all the score generation code
 
-    while homeScore == awayScore:
-        homeScore = random.randint(0, 3)
-        awayScore = random.randint(0, 3)
-
-    if homeScore > awayScore:
-        wins = wins + 1
+    if result == 'W':
+        wins += 1
         results["Won Against"].append(awayTeam)
     else:
-        losses = losses + 1
+        losses += 1
         results["Lost Against"].append(awayTeam)
-
-    print(f"{homeTeam}'s score: {homeScore} - {awayTeam}'s score: {awayScore}\n")
 
 print("Teams won against:")
 for team in results["Won Against"]:
