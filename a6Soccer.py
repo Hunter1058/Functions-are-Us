@@ -1,3 +1,10 @@
+# Hunter Potter, Erik Peterson, 
+# Eugene Son, Penina Strong;
+
+# Soccer Teams Program: asks the user to enter a home soccer team and the number of games they’ll play in a season.
+# It will then ask about the teams they play against and randomly generate scores for games they play.
+# It will then display information about the home team’s wins, losses, and overall performance
+
 from Functions import play_game, displayMenu, chooseTeam
 import random
 
